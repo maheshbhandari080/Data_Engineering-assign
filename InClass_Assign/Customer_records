@@ -1,0 +1,21 @@
+CREATE TABLE CustomerRecords (
+  CustomerID INT,
+  Date DATE
+);
+INSERT INTO CustomerRecords (CustomerID, Date) VALUES
+(1111, '2022-12-01'),
+(1111, '2022-10-01'),
+(1111, '2022-09-01'),
+(1111, '2023-01-01'),
+(2222, '2022-01-01'),
+(2222, '2022-05-01'),
+(2222, '2022-04-01');
+
+SELECT * FROM CustomerRecords;
+
+SELECT
+  CustomerID,
+  Date,
+  DATEDIFF(MONTH, LAG(Date) OVER (PARTITION BY CustomerID ORDER BY Date), Date) AS MonthDifference
+FROM
+  CustomerRecords
