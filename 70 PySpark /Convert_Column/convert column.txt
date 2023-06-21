@@ -1,0 +1,12 @@
+
+Sure, I can explain the code function in simple terms and why it is used.
+
+The code first creates a Spark session and a DataFrame from a list of data. The DataFrame contains four columns: firstname, lastname, country, and state.
+
+The next line of code, states1=df.rdd.map(lambda x: x[3]).collect(), uses the map() function to extract the state column from the DataFrame and store it in a list. The collect() function then returns all the elements in the list.
+
+The next line of code, from collections import OrderedDict imports the OrderedDict class from the collections module. The OrderedDict class is a subclass of the dict class that preserves the order of the elements in the dictionary.
+
+The last line of code, res = list(OrderedDict.fromkeys(states1)), creates an OrderedDict from the list of states and then converts it to a list. The fromkeys() function in the OrderedDict class creates a new dictionary with the unique elements from the list as keys.
+
+The code is used to find the unique states in the DataFrame and print them in a sorted order. The OrderedDict class is used to preserve the order of the elements in the dictionary, so that the states are printed in the same order in which they appear in the DataFrame.
