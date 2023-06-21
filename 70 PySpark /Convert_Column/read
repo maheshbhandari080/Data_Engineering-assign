@@ -1,1 +1,20 @@
+A SparkSession is created with a local master URL (local[1]) and an application name (SparkByExamples.com). 
+If a SparkSession already exists, it retrieves it; otherwise, it creates a new one.
+
+
+Using spark.createDataFrame(), a DataFrame is created from the provided data and column names.
+
+The show() method is called on the DataFrame to display its contents in a tabular format.
+
+The collect() method is used to retrieve all the rows of the DataFrame as a list of Row objects.
+
+The map() transformation is applied to the RDD (Resilient Distributed Dataset) obtained from the DataFrame's RDD. 
+
+It uses a lambda function to extract the value of the "state" column (index 3) for each row.
+
+The collect() method is again used to retrieve all the elements from the RDD as a list of state values (states1).
+
+The code imports the OrderedDict class from the collections module.
+The fromkeys() method of OrderedDict is used to create an ordered dictionary from the list of state values, eliminating duplicates.
+
 
